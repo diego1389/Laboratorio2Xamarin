@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             x:Name="PersonasPage"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Laboratorio2.View.People">
+
+    <StackLayout>
+        <StackLayout HeightRequest="50" Margin="20">
+            <Entry Text="{Binding TextoBuscar}"></Entry>
+        </StackLayout>
+        <ListView x:Name="personasList" ItemsSource="{Binding PersonasList}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Path=BindingContext.VerPersonaCommand, Source={x:Reference PersonasPage}}" 
+                                                          CommandParameter="{Binding Id}"/>
+                            </StackLayout.GestureRecognizers>
+                            <Label Text="{Binding Nombre}" HorizontalOptions="Start" VerticalOptions="Center"/>
+                            <Image x:Name="imgExpan" HorizontalOptions="EndAndExpand" VerticalOptions="Center" Source="Icon.png" HeightRequest="28" WidthRequest="28"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>  
+        </ListView>
+        <StackLayout HeightRequest="50" Margin="20">
+            <Entry Text="{Binding NuevaPersona}"/>
+            <Button Text="Agregar" Command="{Binding AgregarPersonaCommand}"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

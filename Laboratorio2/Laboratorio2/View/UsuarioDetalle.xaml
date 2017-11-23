@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Laboratorio2.View.UsuarioDetalle">
+    <StackLayout HorizontalOptions="Fill">
+        <!--Detalle Persona-->
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" Padding="30">
+            <StackLayout>
+                <Image Source="{Binding PersonaActual.FotoPath}" HeightRequest="50" WidthRequest="50"/>
+            </StackLayout>
+            <StackLayout VerticalOptions="Center">
+                <Label Text="{Binding PersonaActual.Nombre}"/>
+                <Label Text="{Binding PersonaActual.Telefono}"/>
+            </StackLayout>
+        </StackLayout>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Blue">
+            <!--Informacion de Persona-->
+            <StackLayout BackgroundColor="Green" HeightRequest="50"  HorizontalOptions="Fill" VerticalOptions="Start">
+                <!--Nombre-->
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Nombre Completo:"/>
+                    <Label Text="{Binding PersonaActual.NombreCompleto}"/>
+                </StackLayout>
+                <!--Telefono-->
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Telefono:"/>
+                    <Label Text="{Binding PersonaActual.Telefono}"/>
+                </StackLayout>
+                <!--Direccion-->
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Direccion:"/>
+                    <Label Text="{Binding PersonaActual.Direccion}"/>
+                </StackLayout>
+                <!--Fecha Nacimiento-->
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Fecha de nacimiento:"/>
+                    <Label Text="{Binding PersonaActual.FechaNacimiento}"/>
+                </StackLayout>
+            </StackLayout>
+            <!--Lista de Ventas-->
+            <StackLayout>
+
+
+            </StackLayout>
+            <!--Cuadro Rojo-->
+            <StackLayout BackgroundColor="Red" HeightRequest="50" VerticalOptions="EndAndExpand" HorizontalOptions="Fill">
+
+            </StackLayout>
+        </StackLayout>
+        <Button Text="Editar" VerticalOptions="End" HeightRequest="50"/>
+    </StackLayout>
+</ContentPage>

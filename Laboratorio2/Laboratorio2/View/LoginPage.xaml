@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Laboratorio2.View.LoginPage">
+
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+        <StackLayout Orientation="Vertical" VerticalOptions="Center" Padding="30">
+            <Label Text="Usuario: " VerticalOptions="Start" FontSize="Medium"/>
+            <Entry x:Name="usuario" Text="{Binding Usuario}" VerticalOptions="Center"/>
+            <Label Text="Contraseña: " FontSize="Medium"/>
+            <Entry x:Name="password" Text="{Binding Password}"/>
+            <Button x:Name="btnLogin" Text="Login" Command="{Binding LoginCommand}"/>
+            <Label x:Name="infoLogin" Text="{Binding InfoLogin}" FontSize="Medium" TextColor="DarkRed" VerticalOptions="Center"/>
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>
